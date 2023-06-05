@@ -1,0 +1,18 @@
+server:
+  port: 9000
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/backend_db
+    username: root
+    password: nE5kMc7JCGNqwDQM
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+#  jackson:
+#    mapper:
+#      propagate-transient-marker: true
+#    deserialization:
+#      fail-on-ignored-properties: false
+#      fail-on-unknown-properties: false
+
