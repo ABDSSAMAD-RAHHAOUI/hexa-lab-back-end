@@ -1,11 +1,12 @@
 package com.isi.hexa.core.models;
 
+
 public enum UserRole {
-    MEMBER("Member"),
-    ADMIN("Admin"),
-    DIRECTOR("Director"),
-    MARKET_MANAGER("Market Manager"),
-    FINANCIAL_MANAGER("Financial Manager");
+    ROLE_MEMBER("Member"),
+    ROLE_ADMIN("Admin"),
+    ROLE_DIRECTOR("Director"),
+    ROLE_MARKET_MANAGER("Market Manager"),
+    ROLE_FINANCIAL_MANAGER("Financial Manager");
 
     private String displayName;
 

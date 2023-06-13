@@ -1,8 +1,9 @@
 package com.isi.hexa.core.models;
 
 
-
+import jakarta.persistence.Entity;
 import jakarta.persistence.*;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 import java.util.Date;
