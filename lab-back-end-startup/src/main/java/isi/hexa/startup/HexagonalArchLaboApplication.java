@@ -17,7 +17,5 @@ public class HexagonalArchLaboApplication {
 
     public static void main(String[] args) {
         Environment env = SpringApplication.run(HexagonalArchLaboApplication.class, args).getEnvironment();
-        log.info("Start SwaggerUI to use the Shopping List's APIs: "
-                + "http://localhost:{}/swagger-ui/index.html#/shopping-list-controller", env.getProperty("server.port"));
     }
 }

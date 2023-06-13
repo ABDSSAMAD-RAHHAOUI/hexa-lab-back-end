@@ -16,7 +16,7 @@ public class Endowment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int endowmentId;
+    private Long endowmentId;
     private double budget;
     @OneToMany(mappedBy = "endowment")
     private List<EndowmentMember> endowments;

@@ -2,8 +2,10 @@ package com.isi.hexa.core.models;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.HashSet;
@@ -14,12 +16,15 @@ import java.util.Set;
 @Table(name = "users")
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String username;
+    @Column(unique = true)
     private String email;
     private String password;
     private int anneeAffectation;

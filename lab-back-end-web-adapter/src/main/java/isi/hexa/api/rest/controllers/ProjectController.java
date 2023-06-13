@@ -1,6 +1,8 @@
 package isi.hexa.api.rest.controllers;
 
+import com.isi.hexa.core.models.Project;
 import com.isi.hexa.core.models.User;
+import com.isi.hexa.core.port.in.project.LoadAllProjectsUseCase;
 import com.isi.hexa.core.port.in.user.LoadAllUsersUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,20 +15,20 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1")
 
-public class UserController {
+public class ProjectController {
 
-    private LoadAllUsersUseCase loadAllUsersService;
+    private LoadAllProjectsUseCase loadAllProjectsUseCase;
 
     @Autowired
-    public UserController(LoadAllUsersUseCase loadAllUsersService) {
-        this.loadAllUsersService = loadAllUsersService;
+    public ProjectController(LoadAllProjectsUseCase loadAllProjectsUseCase) {
+        this.loadAllProjectsUseCase = loadAllProjectsUseCase;
     }
 
-    @GetMapping("/get")
-    public List<User> getAllUsers(){
-        System.out.println(loadAllUsersService.getAllUsers());
-        return loadAllUsersService.getAllUsers();
+    @GetMapping("/project")
+    public List<Project> getAllUsers(){
+        return loadAllProjectsUseCase.getAllProjects();
     }
+
 
 
 

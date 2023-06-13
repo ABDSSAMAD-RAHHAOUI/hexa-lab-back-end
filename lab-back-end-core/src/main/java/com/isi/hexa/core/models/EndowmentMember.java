@@ -21,5 +21,6 @@ public class EndowmentMember {
     @MapsId("dotationId")
     @JoinColumn(name = "endowment_id")
     private Endowment endowment;
-    private double endowmentMember;
+
+    private double priceEndowment;
 }
