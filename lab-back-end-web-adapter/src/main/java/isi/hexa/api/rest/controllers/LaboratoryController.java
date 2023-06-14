@@ -11,6 +11,7 @@ import com.isi.hexa.core.port.in.laboratory.RegisterLaboratoryUseCase;
 import com.isi.hexa.core.port.in.user.LoadAllUsersUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,12 +41,14 @@ public class LaboratoryController {
 
 
     @PostMapping("/add")
+    @PreAuthorize("hasRole('ADMIN')")
     public Laboratory addLaboratory(@RequestBody Laboratory laboratory){
         return registerLaboratoryUseCase.save(laboratory);
     }
 
 
     @DeleteMapping("{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public void deleteLaboratory(@PathVariable(name = "id") Long id) {
         deleteLaboratoryUseCase.deleteById(id);
     }

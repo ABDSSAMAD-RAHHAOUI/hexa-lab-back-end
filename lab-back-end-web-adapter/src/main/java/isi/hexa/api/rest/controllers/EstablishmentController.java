@@ -39,12 +39,14 @@ public class EstablishmentController {
 
 
     @PostMapping("/add")
+    @PreAuthorize("hasRole('ADMIN')")
     public Establishment addEstablishment(@RequestBody Establishment establishment){
         return registerEstablishmentUseCase.save(establishment);
     }
 
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public void deleteEstablishment(@PathVariable(name = "id") Long id) {
         deleteEstablishmentUseCase.deleteById(id);
     }
