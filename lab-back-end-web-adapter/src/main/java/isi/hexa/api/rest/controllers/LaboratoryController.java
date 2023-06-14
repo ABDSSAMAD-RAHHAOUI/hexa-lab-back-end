@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/laboratory")
 
 public class LaboratoryController {
 
@@ -32,7 +32,7 @@ public class LaboratoryController {
         this.deleteLaboratoryUseCase = deleteLaboratoryUseCase;
     }
 
-    @GetMapping("/laboratory")
+    @GetMapping("/")
     public List<Laboratory> getAllLaboratorys(){
         return loadAllLaboratorysUseCase.getAllLaboratorys();
     }

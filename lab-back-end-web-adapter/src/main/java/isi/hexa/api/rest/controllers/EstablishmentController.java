@@ -32,7 +32,7 @@ public class EstablishmentController {
         this.deleteEstablishmentUseCase = deleteEstablishmentUseCase;
     }
 
-    @GetMapping("getEstablishments")
+    @GetMapping("/")
     public List<Establishment> getAllEstablishments(){
         return loadAllEstablishmentsUseCase.getAllEstablishments();
     }
@@ -44,7 +44,7 @@ public class EstablishmentController {
     }
 
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public void deleteEstablishment(@PathVariable(name = "id") Long id) {
         deleteEstablishmentUseCase.deleteById(id);
     }
