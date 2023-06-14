@@ -16,8 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/establishment")
-
+@RequestMapping("/api/v1/establishments")
 public class EstablishmentController {
 
     private LoadAllEstablishmentsUseCase loadAllEstablishmentsUseCase;
