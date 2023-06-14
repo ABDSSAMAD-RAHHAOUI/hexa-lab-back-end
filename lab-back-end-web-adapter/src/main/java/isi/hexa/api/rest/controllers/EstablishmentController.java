@@ -32,6 +32,7 @@ public class EstablishmentController {
     }
 
     @GetMapping("/")
+    @PreAuthorize("hasRole('ADMIN')")
     public List<Establishment> getAllEstablishments(){
         return loadAllEstablishmentsUseCase.getAllEstablishments();
     }
