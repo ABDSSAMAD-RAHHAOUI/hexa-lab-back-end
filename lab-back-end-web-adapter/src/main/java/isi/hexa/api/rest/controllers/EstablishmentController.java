@@ -26,9 +26,10 @@ public class EstablishmentController {
     private DeleteEstablishmentUseCase deleteEstablishmentUseCase;
 
     @Autowired
-    public EstablishmentController(LoadAllEstablishmentsUseCase loadAllEstablishmentsUseCase, RegisterEstablishmentUseCase registerEstablishmentUseCase) {
+    public EstablishmentController(LoadAllEstablishmentsUseCase loadAllEstablishmentsUseCase, RegisterEstablishmentUseCase registerEstablishmentUseCase,DeleteEstablishmentUseCase deleteEstablishmentUseCase) {
         this.loadAllEstablishmentsUseCase = loadAllEstablishmentsUseCase;
         this.registerEstablishmentUseCase = registerEstablishmentUseCase;
+        this.deleteEstablishmentUseCase = deleteEstablishmentUseCase;
     }
 
     @GetMapping("getEstablishments")
@@ -38,7 +39,7 @@ public class EstablishmentController {
 
 
     @PostMapping("/add")
-    public Establishment addEndowment(@RequestBody Establishment establishment){
+    public Establishment addEstablishment(@RequestBody Establishment establishment){
         return registerEstablishmentUseCase.save(establishment);
     }
 
